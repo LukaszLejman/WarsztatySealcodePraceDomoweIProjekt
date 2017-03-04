@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8"/>
+	<title>Praca domowa</title>
+	<meta name="description" content="Praca domowa"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Szczegóły konta:</legend>
+			<label>
+				Imię:
+				<input type="text" name="email" />
+			</label>
+			<br /><br />
+			<label>
+				Email:
+				<input type="text" name="mobile" />
+			</label>
+			<br />
+		</fieldset>
+		<br />
+		<fieldset>
+			<legend>Kilka informacji o Tobie:</legend>
+			<br />
+			<label>Czy odwiedzisz nas ponownie?
+				<br />
+				<input type="radio" name="odwiedziny" value="Tak"/> 
+					Tak
+				<input type="radio" name="odwiedziny" value="Nie" />
+					Nie
+				<input type="radio" name="odwiedziny" value="Może" />
+					Może
+			</label>
+			<br /><br />
+			<label>
+				Komentarz:
+				<br />
+				<textarea name="comments" cols="40" rows="5">
+				</textarea>   
+			</label>
+			<br /><br />
+			<label>
+				<input type="checkbox" name="spam"
+				value="chcespam" checked="checked" /> Chcę być informowany o aktualizacjach.
+			</label>
+			<br />
+			<label>
+				<input type="submit" name="Prześlij informacje"
+				value="Prześlij informacje" />  
+			</label>
+		</fieldset>
+	</form>
+</body>
+</html>
