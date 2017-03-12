@@ -1,0 +1,52 @@
+body{
+	background-color: black;
+}
+
+.spinner {
+  width: 200px;
+  height: 200px;
+  border-top:5px solid red;
+  border-radius: 50%;
+  margin: auto;
+  animation: preloader linear 3s infinite;
+  
+}
+
+.spinner2 {
+  width: 180px;
+  height: 180px;
+  border-top:5px solid orange;
+  border-radius: 50%;
+  margin: 10px;
+  animation: preloader linear 3s infinite;
+}
+
+.spinner3 {
+  width: 160px;
+  height: 160px;
+  border-top:5px solid yellow;
+  border-radius: 50%;
+  margin: 10px;
+  animation: preloader linear 3s infinite;
+  
+}
+
+@keyframes preloader{
+	
+	0%{
+		transform: rotate(0deg);
+		
+	}
+	
+	50%{
+		transform: rotate(180deg);
+		
+	}
+	
+	100%{
+		transform: rotate(360deg);
+		
+	}
+}
+
+
