@@ -1,0 +1,70 @@
+.box{
+  font-weight: bold;
+  width:500px;
+  border:3px solid black;
+  padding: 20px;
+  margin: 0 auto;
+  min-height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.box>div{
+   flex-basis: 30%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.A{
+  background-color:red;
+  order:3;
+}
+.B{
+  background-color:blue;
+  order:5;
+  flex-grow:1;
+}
+.C{
+  background-color:green;
+  order:2;
+  flex-grow:1;
+}
+.D{
+  background-color:yellow;
+  order:11;
+  flex-grow:2;
+}
+.E{
+  background-color:orange;
+  order:4;
+  flex-grow:1.5;
+}
+.F{
+  background-color:#9400d3;
+  order:7;
+  flex-grow:1;
+}
+.G{
+  background-color:#90ee90;
+  order:9;
+  flex-grow:0;
+}
+.H{
+  background-color:#ff00ff;
+  order:6;
+  flex-grow:1;
+}
+.I{
+  background-color:#a52a2a;
+  order:8;
+  flex-grow:1;
+}
+.J{
+  background-color:gray;
+  order:1;
+  flex-grow:1;
+}
+.K{
+  background-color:pink;
+  order:10;
+  flex-grow:1;
+}
