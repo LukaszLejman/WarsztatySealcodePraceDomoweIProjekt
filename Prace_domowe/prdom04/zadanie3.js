@@ -11,9 +11,9 @@ function wyszukaj (tab, x)
   }
   else
   {
-    return([0]);
+    return([x,-1]);
   }
 }
 
 var tablica = ['O', 'H', 'W', 'N', 'I', ' ', 'E', 'B', 'E', 'W', 'L', 'T', 'C', 'G', 'O', 'E', 'O', 'E'];
-console.log(wyszukaj(tablica,'W'));
+console.log(wyszukaj(tablica,'H'));
