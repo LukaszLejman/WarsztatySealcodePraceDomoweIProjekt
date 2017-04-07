@@ -55,6 +55,7 @@ ul{
   overflow-y: scroll;
   height: 8rem;
   margin: 0;
+  background-color: rgba(207, 207, 207, 0.5);
 }
 
 footer{
