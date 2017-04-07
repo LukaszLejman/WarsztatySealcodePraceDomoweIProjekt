@@ -1,0 +1,97 @@
+html{
+  font-size: 32px;
+}
+
+body{
+  background-color: rgb(207, 207, 207);
+  font-family: sans-serif;
+
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 20rem;
+  height: 25rem;
+  padding: 1rem;
+  background-color: rgb(241, 241, 241);
+  color: rgb(29, 29, 29);
+  position: relative;
+  box-shadow: 0px 0px 22px #888888;
+}
+
+aside{
+  text-align: center;
+  background-color: #D4FF00 ;
+  font-size: 0.5rem;
+  padding: 0.25rem;
+  width: 5rem;
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+figure{
+  margin: 0rem;
+  margin-right: 1rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+img{
+  height: 3rem;
+  width: 3rem;
+}
+
+ul{
+  overflow-y: scroll;
+  height: 8rem;
+  margin: 0;
+}
+
+footer{
+  width: 22rem;
+  text-align: center;
+  font-size: 0.5rem;
+	position:absolute;
+	bottom:0;
+  left:0;
+  background-color: #D4FF00 ;
+}
+
+#dodaj{
+  background-color: #D4FF00;
+   border: none;
+   color: rgb(29, 29, 29);
+   padding: 0.5rem;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 0.5rem;
+   width: 3rem;
+}
+
+#dodajtext{
+  padding: 0.5rem;
+  width: 15rem;
+  border: 1px solid #888888;
+}
+
+h5{
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0;
+  background-color: #D4FF00 ;
+}
+
+.in{
+  margin-bottom: 2rem;
+}
