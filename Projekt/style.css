@@ -81,7 +81,7 @@ footer{
 
 #dodajtext{
   padding: 0.5rem;
-  width: 15rem;
+  width: 16rem;
   border: 1px solid #888888;
 }
 
@@ -94,4 +94,8 @@ h5{
 
 .in{
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
