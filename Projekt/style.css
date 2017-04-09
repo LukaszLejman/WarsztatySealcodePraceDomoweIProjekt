@@ -3,7 +3,7 @@ html{
 }
 
 body{
-  background-color: rgb(207, 207, 207);
+  background-color: #cfcfcf;
   font-family: sans-serif;
 
 }
@@ -55,6 +55,7 @@ ul{
   overflow-y: scroll;
   height: 8rem;
   margin: 0;
+  padding-left: 0.5rem;
 }
 
 footer{
@@ -123,4 +124,89 @@ input[type=checkbox]:checked + label{
   padding: 0 0 0 0px;
   background: url("checked.png");
   background-size: 1rem 1rem;
+}
+
+li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+li:hover{
+  background-color: rgb(231, 225, 225);
+}
+
+li>input[type=checkbox]{
+  order: 1;
+}
+
+li>input[type=button]{
+  order: 3;
+  align-self: flex-end;
+}
+
+li>p{
+  order:2;
+  margin: 0.5rem;
+  font-size: 0.5rem;
+}
+
+.usun{
+  background-color: #D4FF00;
+   border: none;
+   color: rgb(29, 29, 29);
+   height: 1rem;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 0.5rem;
+   width: 3rem;
+   margin: 0.5rem;
+}
+
+.usun:active{
+  background-color: #96b308;
+}
+
+#dodaj:active{
+  background-color: #96b308;
+}
+
+.usun:hover{
+  background-color: #b6da02;
+}
+
+#dodaj:hover{
+  background-color: #b6da02;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4FF00;
+  border: 8px none #D4FF00;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b6da02;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #96b308;
+}
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+  border: 0px none #D4FF00;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
