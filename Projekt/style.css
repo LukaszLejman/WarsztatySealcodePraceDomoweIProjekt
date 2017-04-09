@@ -5,7 +5,6 @@ html{
 body{
   background-color: #cfcfcf;
   font-family: sans-serif;
-
 }
 
 .wrapper{
@@ -13,21 +12,10 @@ body{
   width: 20rem;
   height: 25rem;
   padding: 1rem;
-  background-color: rgb(241, 241, 241);
-  color: rgb(29, 29, 29);
+  background-color: #f1f1f1;
+  color: #1d1d1d;
   position: relative;
   box-shadow: 0px 0px 22px #888888;
-}
-
-aside{
-  text-align: center;
-  background-color: #D4FF00 ;
-  font-size: 0.5rem;
-  padding: 0.25rem;
-  width: 5rem;
-  position: absolute;
-  top:0;
-  right:0;
 }
 
 header{
@@ -36,7 +24,6 @@ header{
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 1rem;
 }
 
 figure{
@@ -51,39 +38,15 @@ img{
   width: 3rem;
 }
 
-ul{
-  overflow-y: scroll;
-  height: 8rem;
-  margin: 0;
-  padding-left: 0.5rem;
-}
-
-footer{
-  width: 22rem;
+aside{
   text-align: center;
-  font-size: 0.5rem;
-	position:absolute;
-	bottom:0;
-  left:0;
-  background-color: #D4FF00 ;
-}
-
-#dodaj{
   background-color: #D4FF00;
-   border: none;
-   color: rgb(29, 29, 29);
-   padding: 0.5rem;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 0.5rem;
-   width: 3rem;
-}
-
-#dodajtext{
-  padding: 0.5rem;
-  width: 16rem;
-  border: 1px solid #888888;
+  font-size: 0.5rem;
+  padding: 0.25rem;
+  width: 5rem;
+  position: absolute;
+  top:0;
+  right:0;
 }
 
 h5{
@@ -94,49 +57,28 @@ h5{
 }
 
 .in{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 1px solid #D4FF00;
 }
 
-input[type=checkbox]{
-  display:none;
-}
-
-input[type=checkbox] + label{
-  background: #999;
-  height: 1rem;
-  width: 1rem;
-  display:inline-block;
-  padding: 0 0 0 0px;
-  background: url("unchecked.png");
-  background-size: 1rem 1rem;
-}
-
-input[type=checkbox]:checked + label{
-  background: #D4FF00;
-  height: 1rem;
-  width: 1rem;
-  display:inline-block;
-  padding: 0 0 0 0px;
-  background: url("checked.png");
-  background-size: 1rem 1rem;
+ul{
+  overflow-y: auto;
+  height: 12rem;
+  margin: 0;
+  padding-left: 0rem;
 }
 
 li{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-
-
 }
 
 li:hover{
-  background-color: rgb(231, 225, 225);
+  background-color: #e7e1e1;
 }
 
 li>input[type=checkbox]{
@@ -150,29 +92,66 @@ li>input[type=button]{
 
 li>p{
   order:2;
-  margin: 0.5rem;
   font-size: 0.5rem;
+  text-align: left;
+  width: 14rem;
+  margin-left: 0.5rem;
+}
+
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox] + label{
+  background: #999;
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  padding: 0;
+  margin-left: 0.5rem;
+  background: url("unchecked.png");
+  background-size: 1rem;
+}
+
+input[type=checkbox]:checked + label{
+  background: #D4FF00;
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  padding: 0;
+  margin-left: 0.5rem;
+  background: url("checked.png");
+  background-size: 1rem;
+}
+
+#dodajtext{
+  padding: 0.5rem;
+  width: 16rem;
+  border: 1px solid #888888;
+}
+
+#dodaj{
+  background-color: #D4FF00;
+   border: none;
+   color: rgb(29, 29, 29);
+   padding: 0.5rem;
+   text-align: center;
+   display: inline-block;
+   font-size: 0.5rem;
+   width: 3rem;
 }
 
 .usun{
   background-color: #D4FF00;
    border: none;
-   color: rgb(29, 29, 29);
-   height: 1rem;
+   color: #1d1d1d;
    text-align: center;
-   text-decoration: none;
    display: inline-block;
    font-size: 0.5rem;
    width: 3rem;
-   margin: 0.5rem;
-}
-
-.usun:active{
-  background-color: #96b308;
-}
-
-#dodaj:active{
-  background-color: #96b308;
+   height: 1rem;
+   margin: 0.5rem 0.5rem 0.5rem 0;
+   padding: 0rem;
 }
 
 .usun:hover{
@@ -183,30 +162,52 @@ li>p{
   background-color: #b6da02;
 }
 
+.usun:active{
+  background-color: #96b308;
+}
+
+#dodaj:active{
+  background-color: #96b308;
+}
+
+input:focus{
+  outline: none;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
 }
-::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
+
 ::-webkit-scrollbar-thumb {
   background: #D4FF00;
-  border: 8px none #D4FF00;
-  border-radius: 50px;
+  border-radius: 1rem;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #b6da02;
 }
+
 ::-webkit-scrollbar-thumb:active {
   background: #96b308;
 }
+
 ::-webkit-scrollbar-track {
   background: #cfcfcf;
   border: 0px none #D4FF00;
-  border-radius: 50px;
+  border-radius: 1rem;
 }
+
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+footer{
+  width: 22rem;
+  text-align: center;
+  font-size: 0.5rem;
+	position:absolute;
+	bottom:0;
+  left:0;
+  background-color: #D4FF00 ;
 }
