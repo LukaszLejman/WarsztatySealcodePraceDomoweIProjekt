@@ -55,7 +55,6 @@ ul{
   overflow-y: scroll;
   height: 8rem;
   margin: 0;
-  background-color: rgba(207, 207, 207, 0.5);
 }
 
 footer{
@@ -99,4 +98,29 @@ h5{
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  border: 1px solid #D4FF00;
+}
+
+input[type=checkbox]{
+  display:none;
+}
+
+input[type=checkbox] + label{
+  background: #999;
+  height: 1rem;
+  width: 1rem;
+  display:inline-block;
+  padding: 0 0 0 0px;
+  background: url("unchecked.png");
+  background-size: 1rem 1rem;
+}
+
+input[type=checkbox]:checked + label{
+  background: #D4FF00;
+  height: 1rem;
+  width: 1rem;
+  display:inline-block;
+  padding: 0 0 0 0px;
+  background: url("checked.png");
+  background-size: 1rem 1rem;
 }
