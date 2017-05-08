@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Praca domowa nr 6</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1 class="example">Praca domowa nr 6</h1>
+			<ul>
+				<li id="li-1">Punkt 1.</li>
+				<li id="li-2">Punkt 2.</li>
+				<li id="li-3">Punkt 3.</li>
+				<li id="li-4">Punkt 4.</li>
+				<li id="li-5">Punkt 5.</li>
+				<li id="li-6">Punkt 6.</li>
+				<li id="li-7">Punkt 7.</li>
+				<li id="li-8">Punkt 8.</li>
+			</ul>
+			<p class="example">Tu jest treść akapitu</p>
+		</div>
+
+    <script>
+      var el = document.getElementsByTagName("h1");
+      el[0].removeAttribute('class');
+
+      var s="rotakifytnedi-ywon";
+      s=s.split('').reverse().join('');
+      el[0].setAttribute('id', s);
+
+      var newLink = document.createElement('a');
+      newLink.setAttribute('href', 'https://forum.sealcode.org/');
+      newLink.setAttribute('target', 'blank');
+      var newText = document.createTextNode('sealcode.org');
+      newLink.appendChild(newText);
+      var position = document.getElementsByClassName('wrapper')[0];
+      position.appendChild(newLink);
+
+			var lista = document.querySelectorAll("li");
+			for(var i=0; i<lista.length; i++) {
+				lista[i].parentNode.removeChild(lista[i]);
+			}
+
+			var pozycja = document.getElementsByTagName('ul')[0];
+			for (var j=1; j<=30; j++){
+				var nowyLi = document.createElement('li');
+				var trescLi = document.createTextNode('Nowa treść '+j);
+				nowyLi.appendChild(trescLi);
+				var pozycja = document.getElementsByTagName('ul')[0];
+				pozycja.appendChild(nowyLi);
+			}
+
+      var parag = document.getElementsByTagName("p");
+      parag[0].firstChild.nodeValue = "Zmieniona treść akapitu.";
+
+
+
+    </script>
+
+	</body>
+</html>
