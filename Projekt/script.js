@@ -19,7 +19,7 @@ function newTask() {
 	if (task==0) alert("Nie możesz dodać pustego zadania!");
 	else {
 		tasklist[alltasks] ={
-			zadanie: '<input type="button" value="Usuń" class="usun" id="btnzad'+alltasks+'"><p>'+task+'</p><input type="checkbox" name="zad'+alltasks+'" value="done" id="task'+alltasks+'"/><label for="task'+alltasks+'"></<label>',
+			zadanie: task,
 			zrobione: false,
 			archiwalne: false //zamiast usuwania zadan, beda one ukrywane w celu zachowania statystyk :D
 		};			
@@ -37,13 +37,31 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 		if (tasklist[i].archiwalne!=true){
 			var newElement = document.createElement('li');
 			newElement.id='zad'+i;
-			newElement.innerHTML=tasklist[i].zadanie;
+			var nowyParagraf = document.createElement('p');
+			newElement.appendChild(nowyParagraf );
+			var newText = document.createTextNode(tasklist[i].zadanie);
+			nowyParagraf .appendChild(newText );
+			var nowyPrzycisk = document.createElement('input');
+			nowyPrzycisk.setAttribute('type', 'button');
+			nowyPrzycisk.setAttribute('value', 'Usuń');
+			nowyPrzycisk.setAttribute('class', 'usun');
+			nowyPrzycisk.setAttribute('id', 'btnzad'+i);
+			newElement .appendChild(nowyPrzycisk );
+			var nowyCheckbox = document.createElement('input');
+			nowyCheckbox.setAttribute('type', 'checkbox');
+			nowyCheckbox.setAttribute('name', 'zad'+i);
+			nowyCheckbox.setAttribute('value', 'done');
+			nowyCheckbox.setAttribute('id', 'task'+i);
+			newElement .appendChild(nowyCheckbox );
+			var nowyLabel = document.createElement('label');
+			nowyLabel.setAttribute('for', 'task'+i);
+			newElement .appendChild(nowyLabel);
 			if(tasklist[i].zrobione==true) newElement.lastChild.previousSibling.checked=true;
 			listazadan.appendChild(newElement);
 			licznik++;
-			var checklistener = newElement.lastChild.previousSibling;
+			var checklistener = nowyCheckbox;
 			if (checklistener) checklistener.addEventListener('change',checkedUnchecked, false);
-			var removelistener = newElement.firstChild;
+			var removelistener = nowyPrzycisk
 			if (removelistener) removelistener.addEventListener('click',removeTask, false);
 			
 		}
