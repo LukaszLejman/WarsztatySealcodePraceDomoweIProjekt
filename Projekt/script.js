@@ -7,6 +7,8 @@ _date.innerHTML=(
   +today.getFullYear()+" r."
 );    //koniec wstawiania daty
 
+var url='http://sealcode.org:8082/api/v1/resources/task';
+
 var tasklist= []; //tablica z zadaniami
 var alltasks=0; //liczba wszystkich zadan (widocznych i ukrytych)
 var listazadan = document.getElementById('listazadan'); //lista z zadaniami
@@ -38,9 +40,9 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 			var newElement = document.createElement('li');
 			newElement.id='zad'+i;
 			var nowyParagraf = document.createElement('p');
-			newElement.appendChild(nowyParagraf );
 			var newText = document.createTextNode(tasklist[i].zadanie);
 			nowyParagraf .appendChild(newText );
+			newElement.appendChild(nowyParagraf );
 			var nowyPrzycisk = document.createElement('input');
 			nowyPrzycisk.setAttribute('type', 'button');
 			nowyPrzycisk.setAttribute('value', 'Usuń');
