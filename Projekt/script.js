@@ -61,7 +61,7 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 			licznik++;
 			var checklistener = nowyCheckbox;
 			if (checklistener) checklistener.addEventListener('change',checkedUnchecked, false);
-			var removelistener = nowyPrzycisk
+			var removelistener = nowyPrzycisk;
 			if (removelistener) removelistener.addEventListener('click',removeTask, false);
 			
 		}
