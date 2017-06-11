@@ -21,12 +21,12 @@ function newTask() {
 	if (task==0) alert("Nie możesz dodać pustego zadania!");
 	else {
 		tasklist[alltasks] ={
-			zadanie: task,
-			zrobione: false,
+			title: task,
+			is_done: false,
 			archiwalne: false //zamiast usuwania zadan, beda one ukrywane w celu zachowania statystyk :D
 		};			
-		alltasks++;
-		Reload();
+		qwest.post(url, {title: tasklist[alltasks].title, is_done: tasklist[alltasks].is_done}, {cache: true});
+		getTasks();
 	}
 }
 
@@ -40,7 +40,7 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 			var newElement = document.createElement('li');
 			newElement.id='zad'+i;
 			var nowyParagraf = document.createElement('p');
-			var newText = document.createTextNode(tasklist[i].zadanie);
+			var newText = document.createTextNode(tasklist[i].body.title);
 			nowyParagraf .appendChild(newText );
 			newElement.appendChild(nowyParagraf );
 			var nowyPrzycisk = document.createElement('input');
@@ -58,7 +58,7 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 			var nowyLabel = document.createElement('label');
 			nowyLabel.setAttribute('for', 'task'+i);
 			newElement .appendChild(nowyLabel);
-			if(tasklist[i].zrobione==true) newElement.lastChild.previousSibling.checked=true;
+			if(tasklist[i].body.is_done==true) newElement.lastChild.previousSibling.checked=true;
 			listazadan.appendChild(newElement);
 			licznik++;
 			var checklistener = nowyCheckbox;
@@ -68,9 +68,10 @@ function Reload(){ //przeładowanie strony (najpierw musze usunac wszystkie li, 
 			
 		}
 	}
+	console.log(licznik);
 	if(licznik==0){
 		var BrakZadanInfo = document.createElement('h5');
-		BrakZadanInfo.innerHTML="Aktualnie nie masz żadnych zadań. Od początku używania tej aplikacji dodałeś: "+alltasks+" zadań. Nie poddawaj się i dodawaj kolejne! :)";
+		BrakZadanInfo.innerHTML="Aktualnie nie masz żadnych zadań. ";
 		listazadan.appendChild(BrakZadanInfo);
 	}
 }
@@ -80,21 +81,39 @@ function removeTask(e){ //szukam numeru w id za pomoca wyrażeń regularnych i u
 	var r = /\d+/;
 	y=x.match(r);
 	tasklist[y].archiwalne=true;
-	Reload();
+	qwest.delete(url+'/'+tasklist[y].id, null, {cache: true}).then(function(xhr, response) { // usuwamy zadanie o danym identyfikatorze (tym razem nie musimy przesyłać ciała takiego zadania)
+		getTasks(); // odświeżamy stan strony
+		});
 }
 
 function checkedUnchecked(e){ //taka sama zasada jak w removeTask
 	x = e.target.id;
 	var r = /\d+/;
 	y=x.match(r);
-	tasklist[y].zrobione=!tasklist[y].zrobione;
-	Reload();
+	tasklist[y].body.is_done=!tasklist[y].body.is_done;
+	qwest.map('PATCH', url+'/'+tasklist[y].id, tasklist[y].body, {cache: true}).then(function(xhr, response) { 
+		getTasks(); // odświeżamy stan strony
+	});
+}
+
+function getTasks() { // pobieramy listę zadań po wystąpieniu odpowiedniego zdarzenia
+	tasklist= [];
+	alltasks=0;
+	qwest.get(url, {}, {cache: true}).then(
+		function(xhr, response) {
+			response.forEach(function(element) { // wywołujemy dla każdego pobranego zasobu
+				tasklist.push(element);
+				tasklist[alltasks].archiwalne=false;
+				alltasks++;	
+				
+				Reload();	
+	})});
 	
-	
+				Reload();	
 }
 
 var addtask = document.getElementById('dodaj');
 addtask.addEventListener('click', newTask, false);
 var addtaskenter = document.getElementById('dodajtext');
 addtaskenter.addEventListener('keypress', function (e) {if (e.keyCode == 13) newTask()},false);
-document.onload = Reload();
+document.onload = getTasks();
